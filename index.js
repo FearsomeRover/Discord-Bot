@@ -3,7 +3,7 @@ const express = require('express');//Set up the express module
 const app = express();
 const router = express.Router();
 const path = require('path')//Include the Path module
-
+const mySecret = process.env['token']
 
 //Set up the Express router
 router.get('/', function(req, res){
