@@ -1,13 +1,16 @@
 module.exports = {
-    name: 'listchannels',
-    description: '',
-    status: false,
-    args: "",
-    execute(client, message, args){
-        for(chanel of client.channels)
-            console.log(chanel)
-
-        
-        message.react('👍')
+  status: false,
+  name: 'listchannels',
+  description: '',
+  args: "",
+  execute(client, message, args){
+    let channels = client.guilds.channels;
+    console.log(channels.first)
+    for (const channel of channels.values()) 
+    {
+    message.channel.send(channel.name);
     }
+       
+  message.react('👍')
+  }
 }
